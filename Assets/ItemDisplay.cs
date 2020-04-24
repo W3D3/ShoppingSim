@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class ItemDisplay : MonoBehaviour
@@ -9,7 +10,7 @@ public class ItemDisplay : MonoBehaviour
 
     public Item item;
 
-    public Text nameText;
+    public TextMeshProUGUI nameText;
     public Image itemImage;
 
 
