@@ -12,12 +12,19 @@ public class ListDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		int counter = 0;
 		Debug.Log(shoppingList);
 		shoppingList.itemList.ForEach(delegate(Item item)
 		{
+			
 			Debug.Log(item);
 			GameObject itemObject = Instantiate(itemTemplate) as GameObject;
 			itemObject.GetComponent<ItemDisplay>().SetValues(item);
+			itemObject.SetActive(true);
+			itemObject.transform.SetParent(itemTemplate.transform.parent);
+			itemObject.transform.localPosition = new Vector2(0,counter*-30);
+			counter++;
+
 		}); 
     }
 
