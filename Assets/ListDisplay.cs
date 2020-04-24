@@ -16,13 +16,12 @@ public class ListDisplay : MonoBehaviour
 		Debug.Log(shoppingList);
 		shoppingList.itemList.ForEach(delegate(Item item)
 		{
-			
 			Debug.Log(item);
 			GameObject itemObject = Instantiate(itemTemplate) as GameObject;
 			itemObject.GetComponent<ItemDisplay>().SetValues(item);
 			itemObject.SetActive(true);
 			itemObject.transform.SetParent(itemTemplate.transform.parent);
-			itemObject.transform.localPosition = new Vector2(0,counter*-30);
+			itemObject.transform.localPosition = new Vector2(10,-30 - counter*35);
 			counter++;
 
 		}); 
