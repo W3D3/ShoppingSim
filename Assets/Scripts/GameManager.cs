@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager
 {
     private static GameManager _instance;
+	public static int gameLength = 90;
+	public static int openHour = 7;
+	public static int closingHour = 21;
 
     private GameManager()
     {

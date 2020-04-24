@@ -1,22 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ListDisplay : MonoBehaviour
 {
 
 	public GameObject itemTemplate;
 	public ShoppingList shoppingList;
+	public TextMeshProUGUI timeArrivalText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+		shoppingList.CalculateTimeOfArrival();
+		timeArrivalText.SetText("Arrival: " +shoppingList.timeOfArrival);
 		int counter = 0;
-		Debug.Log(shoppingList);
 		shoppingList.itemList.ForEach(delegate(Item item)
 		{
-			Debug.Log(item);
 			GameObject itemObject = Instantiate(itemTemplate) as GameObject;
 			itemObject.GetComponent<ItemDisplay>().SetValues(item);
 			itemObject.SetActive(true);
