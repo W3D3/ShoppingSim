@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e694a8856c3da654db5a2aa91de7c2d3, type: 3}
   m_Name: Customer1
   m_EditorClassIdentifier: 
-  spawnDelay: 0
+  spawnDelay: 6
   debugField: Testimann
   itemList:
   - {fileID: 11400000, guid: 93033070bae803a42b1fc0f2b277f33d, type: 2}
