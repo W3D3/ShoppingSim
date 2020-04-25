@@ -131,11 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f730d4b2df06994aa63733bf159b69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goals:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  shoppingList: {fileID: 11400000, guid: b067a7fb4f679e94b842727a898f7077, type: 2}
+  afterShoppingTargets: []
+  checkout: {fileID: 0}
+  exit: {fileID: 0}
 --- !u!208 &1796382926
 NavMeshObstacle:
   m_ObjectHideFlags: 0
