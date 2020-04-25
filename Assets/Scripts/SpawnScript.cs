@@ -13,10 +13,18 @@ public class SpawnScript : MonoBehaviour
     public List<ShoppingList> shoppingLists;
 
     private float _timePassed = 0f;
+    private bool active;
+
+    public bool Active
+    {
+        get => active;
+        set => active = value;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (!active) return;
         List<ShoppingList> spawnedLists = new List<ShoppingList>();
         _timePassed += Time.deltaTime;
         foreach (var shoppingList in shoppingLists)
@@ -40,4 +48,6 @@ public class SpawnScript : MonoBehaviour
         // TODO select from a list of prefabs
         var customer = Instantiate(customerPrefab, spawn);
     }
+    
+    
 }

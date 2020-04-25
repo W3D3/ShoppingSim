@@ -11,6 +11,8 @@ public class GameManager
 
 	public static Item selectedItem = null;
 
+    public static LevelManager currentLevel;
+
     private GameManager()
     {
     }
