@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -18,10 +20,13 @@ public class Customer : MonoBehaviour
     private List<Transform> _reached;
     private List<Item> _cart;
     private Queue<Transform> _afterShoppingQueue;
+    private Animator _animator;
     
     private UnityEvent _notFoundEvent;
 
     public List<Item> Cart => _cart;
+
+    private const string RUNNING_ANIM = "Running";
 
     void Start () {
         _agent = GetComponent<NavMeshAgent>();
@@ -33,6 +38,7 @@ public class Customer : MonoBehaviour
         _cart = new List<Item>();
         _reached = new List<Transform>();
         _itemQueue = new Queue<Item>(shoppingList.itemList);
+        _animator = GetComponent<Animator>();
 
         _notFoundEvent = new UnityEvent();
 
@@ -42,6 +48,7 @@ public class Customer : MonoBehaviour
         var goalPosition = _goal.position;
         _agent.destination = new Vector3(goalPosition.x, GetComponent<Transform>().position.y, goalPosition.z);
         _agent.autoBraking = true;
+        _animator.SetBool(RUNNING_ANIM, true);
     }
 
     Transform SelectNextDestination(bool tryAgain)
@@ -104,7 +111,7 @@ public class Customer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        _animator.SetFloat("Speed", _agent.speed / 3);
         if (_agent.isStopped)
         {
             return;
