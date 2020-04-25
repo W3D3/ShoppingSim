@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e5dd00d94ebb241802362c667876f3, type: 3}
+  m_Name: Level_Customers_01
+  m_EditorClassIdentifier: 
+  shoppingListList:
+  - {fileID: 11400000, guid: d441f569bcb54f54c9ccbc1c3d4a75a2, type: 2}
+  - {fileID: 11400000, guid: 023b783b285a1a749998a80f50160ad4, type: 2}
+  - {fileID: 11400000, guid: ea0e93127763f0b40bb5902954fba03a, type: 2}

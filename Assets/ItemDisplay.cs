@@ -14,7 +14,6 @@ public class ItemDisplay : MonoBehaviour
     public Image itemImage;
 
 	public void SetValues(Item item){
-		Debug.Log(item);
 	    nameText.text = item.name;
         itemImage.sprite = item.sprite;
 	}
