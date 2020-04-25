@@ -13,7 +13,6 @@ using UnityEngine.Events;
 public class Customer : MonoBehaviour
 {
     public ShoppingList shoppingList;
-    public List<Transform> afterShoppingTargets;
     public Checkout checkout;
     public Transform exit;
     
@@ -39,8 +38,7 @@ public class Customer : MonoBehaviour
         _cart = new List<Item>();
         _reached = new List<Transform>();
         _itemQueue = new Queue<Item>(shoppingList.itemList);
-        _afterShoppingQueue = new Queue<Transform>(afterShoppingTargets);
-        
+
         _notFoundEvent = new UnityEvent();
 
         _goal = SelectNextDestination(false);

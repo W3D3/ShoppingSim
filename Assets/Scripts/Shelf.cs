@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class Shelf : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Item _shelvedItem;
+
+    private GameObject _itemObject;
+    
     public void Shelve(Item item)
     {
+        _shelvedItem = item;
         var itemPrefab = item.prefab;
-        Instantiate(itemPrefab, transform);
+        itemPrefab.tag = "Item";
+        _itemObject = Instantiate(itemPrefab, transform);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public Item UnShelve()
     {
-        
+        if (_itemObject != null)
+        {
+            Debug.LogWarning(_itemObject);
+            Destroy(_itemObject.gameObject);
+        }
+        return _shelvedItem;
     }
 }
