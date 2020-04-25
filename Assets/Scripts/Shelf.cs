@@ -10,6 +10,10 @@ public class Shelf : MonoBehaviour
     
     public void Shelve(Item item)
     {
+        if (_itemObject != null)
+        {
+            UnShelve();
+        }
         _shelvedItem = item;
         var itemPrefab = item.prefab;
         itemPrefab.tag = "Item";

@@ -16,6 +16,6 @@ MonoBehaviour:
   itemList:
   - {fileID: 11400000, guid: 58c142250f7cb55459d7d78deca2c164, type: 2}
   - {fileID: 11400000, guid: 93033070bae803a42b1fc0f2b277f33d, type: 2}
-  - {fileID: 11400000, guid: 3a08dd623aaaae74e864f37e92763061, type: 2}
+  - {fileID: 11400000, guid: 2df72e7e5540ff84f9ee844618806e34, type: 2}
   isInfected: 0
   timeOfArrival: 11:30

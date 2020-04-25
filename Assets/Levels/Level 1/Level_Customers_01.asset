@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Level_Customers_01
   m_EditorClassIdentifier: 
   shoppingListList:
+  - {fileID: 11400000, guid: d441f569bcb54f54c9ccbc1c3d4a75a2, type: 2}
   - {fileID: 11400000, guid: 023b783b285a1a749998a80f50160ad4, type: 2}
+  - {fileID: 11400000, guid: ea0e93127763f0b40bb5902954fba03a, type: 2}
