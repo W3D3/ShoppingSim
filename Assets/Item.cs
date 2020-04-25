@@ -9,5 +9,5 @@ public class Item : ScriptableObject
     public int price;
     public Sprite sprite;
 	public Texture2D texture;
-
+	public GameObject prefab;
 }
