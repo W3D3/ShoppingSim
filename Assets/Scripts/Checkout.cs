@@ -63,7 +63,7 @@ public class Checkout : MonoBehaviour
         foreach (var item in items)
         {
             // TODO fix after Veit changes price to int
-            _cash += (int) item.price;
+            _cash += item.price;
         }
         Debug.Log("New cash after paying: " + _cash);
     }

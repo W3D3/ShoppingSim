@@ -16,3 +16,4 @@ MonoBehaviour:
   price: 1
   sprite: {fileID: 21300000, guid: b4e396c84059dc04593728d31ecaaeb7, type: 3}
   texture: {fileID: 2800000, guid: b4e396c84059dc04593728d31ecaaeb7, type: 3}
+  prefab: {fileID: 592598509484877337, guid: a1d8608034212e94fb623c78a80e28ca, type: 3}
