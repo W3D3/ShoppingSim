@@ -6,7 +6,8 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     public new string name;
-    public double price;
+    public int price;
     public Sprite sprite;
+	public Texture2D texture;
 
 }

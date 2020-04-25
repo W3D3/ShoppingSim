@@ -13,15 +13,8 @@ public class ItemDisplay : MonoBehaviour
     public TextMeshProUGUI nameText;
     public Image itemImage;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-		nameText.text = item.name;
-        itemImage.sprite = item.sprite;
-    }
-
 	public void SetValues(Item item){
+		Debug.Log(item);
 	    nameText.text = item.name;
         itemImage.sprite = item.sprite;
 	}
