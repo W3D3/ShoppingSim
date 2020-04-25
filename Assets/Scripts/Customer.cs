@@ -12,9 +12,7 @@ using UnityEngine.AI;
 public class Customer : MonoBehaviour
 {
     public List<Transform> goals;
-    public Transform checkout;
-    public Transform exit;
-    
+
     private NavMeshAgent _agent;
     private Transform _goal;
     private Queue<Transform> _goalQueue;
@@ -28,11 +26,7 @@ public class Customer : MonoBehaviour
         _goalQueue = new Queue<Transform>(goals);
 
         _goal = _goalQueue.Dequeue();
-        
-        // add the checkout and exit at the end
-        _goalQueue.Enqueue(checkout);
-        _goalQueue.Enqueue(exit);
-        
+
         // use y of own transform so height is not an issue
         var goalPosition = _goal.position;
         _agent.destination = new Vector3(goalPosition.x, GetComponent<Transform>().position.y, goalPosition.z);
@@ -49,12 +43,19 @@ public class Customer : MonoBehaviour
         
         if (Math.Abs(_agent.remainingDistance) < 0.001)
         {
-            Debug.Log("Reached target = " + _agent.remainingDistance);
-            // Take the item and remove it from the shopping list TODO
-            
-            Destroy(_goal.gameObject);
-            //var oldGoal = _goal;
-            
+            if (_goal == null)
+            {
+                Debug.Log("Someone snatched our item away!");
+            }
+            else
+            {
+                Debug.Log("Reached target = " + _goal.name);
+
+                // Take the item and remove it from the shopping list TODO
+                //_goal.GetComponentInChildren<MeshRenderer>().enabled = false;
+                Destroy(_goal.gameObject);
+            }
+
             if (_goalQueue.Count > 0)
             {
                 _goal = _goalQueue.Dequeue();
