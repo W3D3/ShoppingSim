@@ -10,6 +10,7 @@ public class GameManager
 	public static int closingHour = 21;
 
 	public static Item selectedItem = null;
+    public static int currentMoney;
 
     public static LevelManager currentLevel;
 
@@ -37,5 +38,16 @@ public class GameManager
         }
 
         return items;
+    }
+
+    public static string IngameSecondsToHourFormat(int seconds)
+    {
+        int minutesPerGameSecond = ((closingHour - openHour) * 60) / gameLength;
+        int hour = openHour + ((seconds * minutesPerGameSecond) / 60);
+        string minutes = ""+(seconds * minutesPerGameSecond) % 60;
+        if (minutes.Length == 1)
+            minutes = "0" + minutes;
+        return hour + ":" + minutes;
+  
     }
 }

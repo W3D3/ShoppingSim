@@ -14,21 +14,13 @@ public class ShoppingList : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
-		CalculateTimeOfArrival();
+        CalculateTimeOfArrival();
 	}
 
-	public void CalculateTimeOfArrival(){
-		//Debug.Log("Calc TimeOfArrival: " +timeOfArrival);
-		int minutesPerGameSecond = ((GameManager.closingHour - GameManager.openHour)*60)/GameManager.gameLength;
-		int hour = GameManager.openHour + ((spawnDelay*minutesPerGameSecond)/60);
-		int minutes = (spawnDelay*minutesPerGameSecond) % 60;
-		timeOfArrival = hour + ":" + minutes;
-		//Debug.Log("Calc2 TimeOfArrival: " +timeOfArrival);
-
-
-	}
-
-
+    public void CalculateTimeOfArrival()
+    {
+        timeOfArrival = GameManager.IngameSecondsToHourFormat(spawnDelay);
+    }
 }
 
 

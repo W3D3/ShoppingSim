@@ -15,7 +15,7 @@ MonoBehaviour:
   spawnDelay: 2
   itemList:
   - {fileID: 11400000, guid: 58c142250f7cb55459d7d78deca2c164, type: 2}
-  - {fileID: 11400000, guid: 58c142250f7cb55459d7d78deca2c164, type: 2}
+  - {fileID: 11400000, guid: ce907aca182598141a39715f21213363, type: 2}
   - {fileID: 11400000, guid: 93033070bae803a42b1fc0f2b277f33d, type: 2}
   - {fileID: 11400000, guid: 58c142250f7cb55459d7d78deca2c164, type: 2}
   isInfected: 0
