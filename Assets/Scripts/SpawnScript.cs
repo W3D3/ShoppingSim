@@ -9,6 +9,7 @@ public class SpawnScript : MonoBehaviour
     public Transform exit;
     public Customer customerPrefab;
 
+    [HideInInspector]
     public List<ShoppingList> shoppingLists;
 
     private float _timePassed = 0f;
@@ -32,11 +33,6 @@ public class SpawnScript : MonoBehaviour
 
     private void SpawnCustomerWithShoppingList(ShoppingList shoppingList)
     {
-        List<Transform> afterShoppingGoals = new List<Transform>();
-        //afterShoppingGoals.Add(checkOut);
-        //afterShoppingGoals.Add(exit);
-
-        customerPrefab.afterShoppingTargets = afterShoppingGoals;
         customerPrefab.exit = exit;
         customerPrefab.checkout = checkOut;
         customerPrefab.shoppingList = shoppingList;
