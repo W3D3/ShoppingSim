@@ -18,7 +18,7 @@ public class CustomerDisplay : MonoBehaviour
             slobject.GetComponent<ListDisplay>().SetValues(sList);
             slobject.SetActive(true);
             slobject.transform.SetParent(shoppingListTemplate.transform.parent);
-            slobject.transform.localPosition = new Vector2(0, -50 + counter * 230);
+            slobject.transform.localPosition = new Vector2(0, 340 + counter * -210);
             counter++;
 
         });

@@ -14,8 +14,6 @@ public class GameManager
 
     public static LevelManager currentLevel;
 
-    public static LevelManager currentLevel;
-
     private GameManager()
     {
     }
