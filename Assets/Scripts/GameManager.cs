@@ -9,6 +9,8 @@ public class GameManager
 	public static int openHour = 7;
 	public static int closingHour = 21;
 
+	public static Item selectedItem = null;
+
     private GameManager()
     {
     }

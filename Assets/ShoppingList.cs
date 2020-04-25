@@ -7,7 +7,6 @@ public class ShoppingList : ScriptableObject
 {
 
 	public int spawnDelay;
-    public string debugField;
     public List<Item> itemList = new List<Item>();
     public bool isInfected;
 	public string timeOfArrival;
@@ -19,12 +18,12 @@ public class ShoppingList : ScriptableObject
 	}
 
 	public void CalculateTimeOfArrival(){
-		Debug.Log("Calc TimeOfArrival: " +timeOfArrival);
+		//Debug.Log("Calc TimeOfArrival: " +timeOfArrival);
 		int minutesPerGameSecond = ((GameManager.closingHour - GameManager.openHour)*60)/GameManager.gameLength;
 		int hour = GameManager.openHour + ((spawnDelay*minutesPerGameSecond)/60);
 		int minutes = (spawnDelay*minutesPerGameSecond) % 60;
 		timeOfArrival = hour + ":" + minutes;
-		Debug.Log("Calc2 TimeOfArrival: " +timeOfArrival);
+		//Debug.Log("Calc2 TimeOfArrival: " +timeOfArrival);
 
 
 	}
