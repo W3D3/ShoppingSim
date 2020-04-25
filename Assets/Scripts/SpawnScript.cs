@@ -21,6 +21,8 @@ public class SpawnScript : MonoBehaviour
         set => active = value;
     }
 
+    public float TimePassed => _timePassed;
+
     // Update is called once per frame
     void Update()
     {

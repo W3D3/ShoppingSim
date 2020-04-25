@@ -5,11 +5,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-/// <summary>
-/// Moves through all of the transform goals one after another
-/// Ignores the height of the supplied Tranform.positions.
-/// Expect the GameObject to have a NavMeshAgent
-/// </summary>
 public class Customer : MonoBehaviour
 {
     public ShoppingList shoppingList;
@@ -69,10 +64,6 @@ public class Customer : MonoBehaviour
         if (_itemQueue.Count == 0)
         {
             return checkout.Register(this);
-            if (_afterShoppingQueue.Count > 0)
-            {
-                return _afterShoppingQueue.Dequeue();
-            }
         }
 
         return null;

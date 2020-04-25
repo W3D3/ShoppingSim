@@ -1392,6 +1392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134214216}
   - component: {fileID: 134214215}
+  - component: {fileID: 134214217}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -1474,6 +1475,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 40, y: 100.89, z: 0}
+--- !u!114 &134214217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134214214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3b0772768d12d42aea571fc1485b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &138315759
 GameObject:
   m_ObjectHideFlags: 0
@@ -5827,7 +5840,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-169806
+  m_Name: pb_Mesh88478
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
