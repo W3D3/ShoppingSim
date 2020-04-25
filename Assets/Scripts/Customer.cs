@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 /// <summary>
 /// Moves through all of the transform goals one after another
@@ -11,21 +12,38 @@ using UnityEngine.AI;
 /// </summary>
 public class Customer : MonoBehaviour
 {
-    public List<Transform> goals;
-
+    public ShoppingList shoppingList;
+    public List<Transform> afterShoppingTargets;
+    public Checkout checkout;
+    public Transform exit;
+    
     private NavMeshAgent _agent;
     private Transform _goal;
-    private Queue<Transform> _goalQueue;
+    private Item _currentItem;
+    private Queue<Item> _itemQueue;
+    private List<Transform> _reached;
+    private List<Item> _cart;
+    private Queue<Transform> _afterShoppingQueue;
     
+    private UnityEvent _notFoundEvent;
+
+    public List<Item> Cart => _cart;
+
     void Start () {
         _agent = GetComponent<NavMeshAgent>();
         if (_agent == null)
         {
-            Debug.LogError("Customer has no NavMeshAgent attached!");
+            Debug.LogError("[" + name + "] has no NavMeshAgent attached!");
         }
-        _goalQueue = new Queue<Transform>(goals);
+        
+        _cart = new List<Item>();
+        _reached = new List<Transform>();
+        _itemQueue = new Queue<Item>(shoppingList.itemList);
+        _afterShoppingQueue = new Queue<Transform>(afterShoppingTargets);
+        
+        _notFoundEvent = new UnityEvent();
 
-        _goal = _goalQueue.Dequeue();
+        _goal = SelectNextDestination(false);
 
         // use y of own transform so height is not an issue
         var goalPosition = _goal.position;
@@ -33,7 +51,69 @@ public class Customer : MonoBehaviour
         _agent.autoBraking = true;
     }
 
-    private void Update()
+    Transform SelectNextDestination(bool tryAgain)
+    {
+        Transform target = null;
+        // search for our items first
+        while (target == null && _itemQueue.Count > 0)
+        {
+            if(!tryAgain) _currentItem = _itemQueue.Dequeue();
+            target = FindNextGoalForItem(_currentItem);
+        }
+
+        if (target != null)
+        {
+            var buyable = target.GetComponent<Buyable>();
+            buyable.Reserve(this);
+            return target;
+        }
+        // afterwards go through our remaining goals
+        if (_itemQueue.Count == 0)
+        {
+            return checkout.Register(this);
+            if (_afterShoppingQueue.Count > 0)
+            {
+                return _afterShoppingQueue.Dequeue();
+            }
+        }
+
+        return null;
+
+    }
+
+    Transform FindNextGoalForItem(Item item)
+    {
+        float minDist = Single.PositiveInfinity;
+        Transform minTranform = null;
+        foreach (var levelItem in GameObject.FindGameObjectsWithTag("Item"))
+        {
+            if (levelItem.name.StartsWith(item.name))
+            {
+                if (!_reached.Contains(levelItem.transform))
+                {
+                    var difference = transform.position - levelItem.transform.position;
+                    var buyable = levelItem.GetComponent<Buyable>();
+                    if (difference.magnitude < minDist && buyable.Reserved == false)
+                    {
+                        minDist = difference.magnitude;
+                        minTranform = levelItem.transform;
+                    }
+                }
+            }
+        }
+
+        if (minTranform == null)
+        {
+            // no item found
+            // TODO Frustrate customer when no element can be found?
+            Debug.Log("[" + name + "] Cannot find a proper item to pick up for " + item.name);
+            _notFoundEvent.Invoke();
+        }
+
+        return minTranform;
+    }
+
+    private void FixedUpdate()
     {
         
         if (_agent.isStopped)
@@ -45,28 +125,62 @@ public class Customer : MonoBehaviour
         {
             if (_goal == null)
             {
-                Debug.Log("Someone snatched our item away!");
+                Debug.Log("[" + name + "] Someone snatched our item " + "away!");
+                _goal = SelectNextDestination(true);
             }
             else
             {
-                Debug.Log("Reached target = " + _goal.name);
-
-                // Take the item and remove it from the shopping list TODO
-                //_goal.GetComponentInChildren<MeshRenderer>().enabled = false;
-                Destroy(_goal.gameObject);
+                Debug.Log("[" + name + "] Reached target = " + _goal.name);
+                _reached.Add(_goal);
+                
+                
+                var buyableGoal = _goal.GetComponent<Buyable>();
+                var checkoutGoal = _goal.GetComponent<Checkout>();
+                if (buyableGoal != null)
+                {
+                    // we have reached an item that we want to buy
+                    if (buyableGoal.Buy(this))
+                    {
+                        _cart.Add(_currentItem);
+                        Destroy(_goal.gameObject);
+                        _goal = SelectNextDestination(false);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Could not buy reserved item! Should not be possible!");
+                        _goal = SelectNextDestination(true);
+                    }
+                } 
+                else if (checkoutGoal != null)
+                {
+                    // we have reached the checkout
+                    checkoutGoal.PayAndAdvanceQueue();
+                    _goal = exit;
+                }
+                else if (_goal.name.ToUpper() == "EXIT")
+                {
+                    Destroy(gameObject);
+                }
             }
 
-            if (_goalQueue.Count > 0)
+            if (_goal == null)
             {
-                _goal = _goalQueue.Dequeue();
-                //Destroy(oldGoal.gameObject);
+                Debug.Log("[" + name + "] Done - Waiting for input!");
+                _agent.isStopped = true;
+                //Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("[" + name + "] Set next goal = " + _goal.name);
                 _agent.destination = _goal.position;
             }
-            else
-            {
-                Debug.Log("Done with targets!");
-                Destroy(this.gameObject);
-            }
         }
+    }
+
+    public void OrderToPosition(Transform transform)
+    {
+        _agent.isStopped = false;
+        _agent.destination = transform.position;
+        _goal = transform;
     }
 }
