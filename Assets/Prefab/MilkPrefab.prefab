@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2886600929258258300}
   - component: {fileID: 2886600929261682524}
   - component: {fileID: 2886600929260682652}
+  - component: {fileID: -3200776935223049714}
   m_Layer: 0
   m_Name: MilkPrefab
   m_TagString: Item
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2886600929258742620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4810151, y: -0.00875254, z: 0.95303124}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-3200776935223049714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886600929258742620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393f39c1d4dc4ed43a56d7c24bdf6b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reservedFor: {fileID: 0}
+  bought: 0
