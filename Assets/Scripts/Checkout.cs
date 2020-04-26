@@ -15,7 +15,7 @@ public class Checkout : MonoBehaviour
     void Start()
     {
         _customerQueue = new Queue<Customer>();
-        _cash = 0;
+        _cash = GameManager.currentMoney;
     }
 
     public int Cash => _cash;
@@ -41,20 +41,20 @@ public class Checkout : MonoBehaviour
     public void PayAndAdvanceQueue()
     {
         // Emulate the customer paying for 5 seconds
-        StartCoroutine(AdvanceQueue(5));
+        StartCoroutine(AdvanceQueue(2));
     }
 
     IEnumerator AdvanceQueue(int secondsToWait)
     {
-        yield return new WaitForSeconds(secondsToWait);
+        
         var currentCustomer = _customerQueue.Dequeue();
         Pay(currentCustomer.Cart);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(secondsToWait);
         int i = 0;
         foreach (var customer in _customerQueue)
         {
             customer.OrderToPosition(queuePositions[i]);
-            Debug.LogWarning("Ordererd " + customer + " to " + queuePositions[i]);
+            Debug.Log("Ordererd " + customer + " to " + queuePositions[i]);
         }
     }
 
@@ -65,6 +65,8 @@ public class Checkout : MonoBehaviour
             // TODO fix after Veit changes price to int
             _cash += item.price;
         }
+
+        GameManager.currentMoney = _cash;
         Debug.Log("New cash after paying: " + _cash);
     }
 }
