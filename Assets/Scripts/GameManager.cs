@@ -15,6 +15,8 @@ public class GameManager
 
     public static LevelManager currentLevel;
 
+    public static UIMasterScript uiScript;
+
     private GameManager()
     {
     }
@@ -55,6 +57,7 @@ public class GameManager
 
     public static void GameOver()
     {
+        uiScript.NewStart();
         Time.timeScale = 0;
         // TODO show game over screen
     }

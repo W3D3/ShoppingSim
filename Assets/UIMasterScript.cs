@@ -10,6 +10,14 @@ public class UIMasterScript : MonoBehaviour
     public TextMeshProUGUI timeText;
     public AudioSource audioData;
 
+    public TMP_Dropdown dropdown;
+
+    public CustomerList level1;
+    public CustomerList level2;
+    public CustomerList level3;
+
+    private GameObject startButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +34,33 @@ public class UIMasterScript : MonoBehaviour
 
     public void PressStartButton(Object startButton)
     {
+
+        GameManager.uiScript = this;
         //Toggle Button
         ((GameObject) startButton).SetActive(false);
-
+        this.startButton = ((GameObject)startButton);
         //Start Music
         audioData = GetComponent<AudioSource>();
         audioData.Play(0);
 
+        Debug.Log(dropdown.value);
+
+        switch (dropdown.value)
+        {
+            case 0: GameManager.currentLevel.customerList = level1; break;
+            case 1: GameManager.currentLevel.customerList = level2; break;
+            case 2: GameManager.currentLevel.customerList = level3; break;
+        }
+
+        dropdown.gameObject.SetActive(false);
         //Start Game
         GameManager.currentLevel.StartLevel();
+    }
+
+    public void NewStart()
+    {
+        startButton.SetActive(true);
+        dropdown.gameObject.SetActive(true);
+
     }
 }
