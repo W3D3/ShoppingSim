@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e694a8856c3da654db5a2aa91de7c2d3, type: 3}
+  m_Name: SL10
+  m_EditorClassIdentifier: 
+  spawnDelay: 70
+  itemList:
+  - {fileID: 11400000, guid: 58c142250f7cb55459d7d78deca2c164, type: 2}
+  - {fileID: 11400000, guid: 58c142250f7cb55459d7d78deca2c164, type: 2}
+  - {fileID: 11400000, guid: 2df72e7e5540ff84f9ee844618806e34, type: 2}
+  - {fileID: 11400000, guid: 2df72e7e5540ff84f9ee844618806e34, type: 2}
+  - {fileID: 11400000, guid: 3a08dd623aaaae74e864f37e92763061, type: 2}
+  - {fileID: 11400000, guid: 3a08dd623aaaae74e864f37e92763061, type: 2}
+  - {fileID: 11400000, guid: 58c142250f7cb55459d7d78deca2c164, type: 2}
+  - {fileID: 11400000, guid: 2df72e7e5540ff84f9ee844618806e34, type: 2}
+  isInfected: 0
+  timeOfArrival: 
