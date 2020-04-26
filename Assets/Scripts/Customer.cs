@@ -168,7 +168,8 @@ public class Customer : MonoBehaviour
             else
             {
                 Debug.Log("[" + name + "] Set next goal = " + _goal.name);
-                _agent.destination = _goal.position;
+                if(!_agent.isStopped)
+                    _agent.destination = _goal.position;
             }
         }
     }
