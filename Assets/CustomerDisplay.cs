@@ -15,14 +15,21 @@ public class CustomerDisplay : MonoBehaviour
         RefreshUI();
     }
 
+    void Update()
+    {
+        RefreshUI();
+    }
+
     public void RefreshUI()
     {
         //int counter = 0;
         List<ShoppingList> sortedList = cList.shoppingListList.OrderBy(o => o.spawnDelay).ToList();
-        
+
         //If the elements in the list are not destroyed after the customer has finished - check for hide or other property that shows that the customer is done and ignore said customer
         for (int i = 0; i < sortedList.Count && i < 4; i++) // Loop through List with for
         {
+            if (sortedList[i].isFinished)
+                continue;
             GameObject slobject = Instantiate(shoppingListTemplate) as GameObject;
             slobject.GetComponent<ListDisplay>().SetValues(sortedList[i]);
             slobject.SetActive(true);

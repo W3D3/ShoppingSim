@@ -11,6 +11,8 @@ public class ShoppingList : ScriptableObject
     public bool isInfected;
 	public string timeOfArrival;
 
+    public bool isFinished = false;
+
     // Start is called before the first frame update
     void Start()
     {
