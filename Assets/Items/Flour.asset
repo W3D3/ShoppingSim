@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Flour
   price: 199
   sprite: {fileID: 21300000, guid: af95d32e65981864982cf59af0b8d553, type: 3}
-  texture: {fileID: 2800000, guid: af95d32e65981864982cf59af0b8d553, type: 3}
+  texture: {fileID: 2800000, guid: 4542c1c9b7768854b8ad4350b6f8b6b7, type: 3}
   prefab: {fileID: 7448896903612422547, guid: f4ffe75d74b5f8245ae2732ad5cb047f, type: 3}

@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Banana
   price: 89
   sprite: {fileID: 21300000, guid: e72e97ba03d2f1f419db965e6cc9118e, type: 3}
-  texture: {fileID: 2800000, guid: e72e97ba03d2f1f419db965e6cc9118e, type: 3}
+  texture: {fileID: 2800000, guid: 55a1ec44e1d012f40ac9cf69fd49979c, type: 3}
   prefab: {fileID: 592598509484877337, guid: a1d8608034212e94fb623c78a80e28ca, type: 3}

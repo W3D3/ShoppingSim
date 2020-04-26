@@ -21,7 +21,7 @@ public class Customer : MonoBehaviour
     private List<Item> _cart;
     private Queue<Transform> _afterShoppingQueue;
     private Animator _animator;
-    
+    public AudioSource audioData;
     private UnityEvent _notFoundEvent;
 
     public List<Item> Cart => _cart;
@@ -137,6 +137,8 @@ public class Customer : MonoBehaviour
                     // we have reached an item that we want to buy
                     if (buyableGoal.Buy(this))
                     {
+                        audioData = GetComponent<AudioSource>();
+                        audioData.Play(0);
                         _cart.Add(_currentItem);
                         Destroy(_goal.gameObject);
                         _goal = SelectNextDestination(false);

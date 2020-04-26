@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Milk
   price: 159
   sprite: {fileID: 21300000, guid: f83e84c161c856944bb3bad37bc8c0f3, type: 3}
-  texture: {fileID: 2800000, guid: f83e84c161c856944bb3bad37bc8c0f3, type: 3}
+  texture: {fileID: 2800000, guid: fe384ea0c306bbb49b05b83033e5a38f, type: 3}
   prefab: {fileID: 2886600929258742620, guid: 1ddf90a87613dff4d8df0093314e36c6, type: 3}

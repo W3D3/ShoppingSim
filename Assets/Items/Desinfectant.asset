@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Desinfectant
   price: 1295
   sprite: {fileID: 21300000, guid: a1b7b2671d729c74485e74cd72fa89e3, type: 3}
-  texture: {fileID: 2800000, guid: a1b7b2671d729c74485e74cd72fa89e3, type: 3}
+  texture: {fileID: 2800000, guid: 3db1b0902ec900148acfd1d6ff1157a3, type: 3}
   prefab: {fileID: 8041167489020035564, guid: d0755cd16f188ef4fb35f8b705b505c2, type: 3}
