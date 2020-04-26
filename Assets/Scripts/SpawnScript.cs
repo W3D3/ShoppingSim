@@ -13,12 +13,12 @@ public class SpawnScript : MonoBehaviour
     public List<ShoppingList> shoppingLists;
 
     private float _timePassed = 0f;
-    private bool active;
+    private bool _active = false;
 
     public bool Active
     {
-        get => active;
-        set => active = value;
+        get => _active;
+        set => _active = value;
     }
 
     public float TimePassed => _timePassed;
@@ -26,7 +26,7 @@ public class SpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!active) return;
+        if (!_active) return;
         List<ShoppingList> spawnedLists = new List<ShoppingList>();
         _timePassed += Time.deltaTime;
         foreach (var shoppingList in shoppingLists)
