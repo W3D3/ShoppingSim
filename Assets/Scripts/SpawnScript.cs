@@ -28,7 +28,6 @@ public class SpawnScript : MonoBehaviour
     {
         if (!_active) return;
         List<ShoppingList> spawnedLists = new List<ShoppingList>();
-        Debug.Log("Time passed " + Time.deltaTime);
         _timePassed += Time.deltaTime;
         foreach (var shoppingList in shoppingLists)
         {

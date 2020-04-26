@@ -88,9 +88,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7000692905224892112}
-  - component: {fileID: 2524104170425234438}
+  - component: {fileID: -2242621970838853832}
   m_Layer: 0
-  m_Name: ToiletPaperPrefab
+  m_Name: ToiletpaperPrefabNew
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2524104170425234438
+--- !u!114 &-2242621970838853832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

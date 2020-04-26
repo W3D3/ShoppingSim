@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 09539f032513d8542807f2194d4e41f0, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0ffaa0b7117ba8c47a9d05ae701d4b4d, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 134214215}
-  m_IndirectSpecularColor: {r: 0.34729147, g: 0.45044622, b: 0.54488194, a: 1}
+  m_IndirectSpecularColor: {r: 0.28521946, g: 0.3710942, b: 0.49175945, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8520,6 +8520,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6015867257952251846, guid: 89e83afcfca920c49bde045dd3c9f10a,
+        type: 3}
+      propertyPath: cList
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e83afcfca920c49bde045dd3c9f10a, type: 3}
 --- !u!1 &1064446565
@@ -12473,7 +12478,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506880444}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12695,7 +12700,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560794220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15636,7 +15641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687c4b774e172964b9654ce8ea15bfc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerList: {fileID: 11400000, guid: 3c0234f93efdfa548ad1e603887d46d2, type: 2}
+  customerList: {fileID: 11400000, guid: 7f977251cb21ebe488ea1aa28f6ff97c, type: 2}
   display: {fileID: 1860278582}
 --- !u!4 &2011184747
 Transform:
@@ -16205,7 +16210,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025432063}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log("Loaded level with " + customerList.shoppingListList.Count + " customers.");
         display.cList = customerList;
+        display.RefreshUI();
         _spawner.shoppingLists = new List<ShoppingList>(customerList.shoppingListList);
     }
 

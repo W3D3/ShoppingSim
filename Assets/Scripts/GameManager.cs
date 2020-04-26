@@ -51,4 +51,9 @@ public class GameManager
             minutes = "0" + minutes;
         return hour + ":" + minutes;
     }
+
+    public static void GameOver()
+    {
+        Time.timeScale = 0;
+    }
 }

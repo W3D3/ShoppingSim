@@ -10,6 +10,11 @@ public class CustomerDisplay : MonoBehaviour
    
     void Start()
     {
+        RefreshUI();
+    }
+
+    public void RefreshUI()
+    {
         int counter = 0;
         cList.shoppingListList.ForEach(delegate (ShoppingList sList)
         {
