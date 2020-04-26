@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager
 {
@@ -55,5 +56,12 @@ public class GameManager
     public static void GameOver()
     {
         Time.timeScale = 0;
+        // TODO show game over screen
+    }
+
+    public static void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 }

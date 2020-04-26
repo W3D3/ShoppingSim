@@ -32,6 +32,12 @@ public class Infectable : MonoBehaviour
         if (_timeInInfectionZone > timeToBeInfected)
         {
             Debug.Log("[Infect]"+ this.name + " got infected ");
+            Color color = new Color(0f, 1f, 0f, 0.8f);
+            //Fetch the Renderer from the GameObject
+            Renderer rend = GetComponentInChildren<Renderer>();
+            rend.material.shader = Shader.Find("Universal Render Pipeline/Lit");
+            rend.material.SetColor("_Color", color);
+            GameManager.GameOver();
         }
     }
     
@@ -45,7 +51,7 @@ public class Infectable : MonoBehaviour
             var customer = hitColliders[i].GetComponent<Customer>();
             if (customer != null && customer != this.GetComponent<Customer>())
             {
-                Debug.Log("[Infect]"+ this.name + " has customer in prox: " + customer.gameObject.name);
+                Debug.Log("[Infect]"+ this.name + " has customer in prox: " + customer.gameObject.name + " Amount: " + _timeInInfectionZone);
                 _inInfectionZone = true;
                 hitThisFrame = true;
             }
