@@ -2264,11 +2264,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6015867257821428148, guid: 89e83afcfca920c49bde045dd3c9f10a,
-        type: 3}
-      propertyPath: m_ScreenMatchMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6015867257821428150, guid: 89e83afcfca920c49bde045dd3c9f10a,
         type: 3}
       propertyPath: m_Name
