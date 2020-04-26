@@ -450,6 +450,8 @@ GameObject:
   - component: {fileID: 7301699003643476159}
   - component: {fileID: 7301699003643476152}
   - component: {fileID: -98210413227146318}
+  - component: {fileID: 1297717885}
+  - component: {fileID: 8580664211172092950}
   m_Layer: 0
   m_Name: humanCustomer
   m_TagString: Untagged
@@ -526,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f730d4b2df06994aa63733bf159b69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoppingList: {fileID: 11400000, guid: d441f569bcb54f54c9ccbc1c3d4a75a2, type: 2}
+  shoppingList: {fileID: 11400000, guid: ea0e93127763f0b40bb5902954fba03a, type: 2}
   checkout: {fileID: 0}
   exit: {fileID: 0}
   audioData: {fileID: -98210413227146318}
@@ -626,6 +628,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1297717885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555863392082468541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1595aafc165dbb4695289fa93b3a7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToBeInfected: 3
+  infectionDistance: 3
+--- !u!136 &8580664211172092950
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555863392082468541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.7054558
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8527401, z: 0}
 --- !u!1 &3555863392082468543
 GameObject:
   m_ObjectHideFlags: 0

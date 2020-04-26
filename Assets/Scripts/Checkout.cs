@@ -46,15 +46,17 @@ public class Checkout : MonoBehaviour
 
     IEnumerator AdvanceQueue(int secondsToWait)
     {
-        
         var currentCustomer = _customerQueue.Dequeue();
         Pay(currentCustomer.Cart);
         yield return new WaitForSeconds(secondsToWait);
         int i = 0;
         foreach (var customer in _customerQueue)
         {
-            customer.OrderToPosition(queuePositions[i]);
-            Debug.Log("Ordererd " + customer + " to " + queuePositions[i]);
+            if (customer != null)
+            {
+                customer.OrderToPosition(queuePositions[i]);
+                Debug.Log("Ordererd " + customer + " to " + queuePositions[i]);
+            }
         }
     }
 

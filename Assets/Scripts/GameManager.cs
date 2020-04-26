@@ -18,6 +18,8 @@ public class GameManager
     {
     }
 
+    public static LevelManager CurrentLevel => currentLevel;
+
     public static GameManager GetInstance()
     {
         if (_instance == null)
@@ -48,6 +50,5 @@ public class GameManager
         if (minutes.Length == 1)
             minutes = "0" + minutes;
         return hour + ":" + minutes;
-  
     }
 }

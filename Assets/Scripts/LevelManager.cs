@@ -22,15 +22,14 @@ public class LevelManager : MonoBehaviour
         _spawner = GetComponent<SpawnScript>();
         if (_spawner == null) Debug.LogError("No spawner on LevelManager!");
 
-        Debug.Log("Starting game with " + customerList.shoppingListList.Count + " customers.");
+        Debug.Log("Loaded level with " + customerList.shoppingListList.Count + " customers.");
         display.cList = customerList;
         _spawner.shoppingLists = new List<ShoppingList>(customerList.shoppingListList);
-        // TODO do via button
-        StartLevel();
     }
 
     public void StartLevel()
     {
+        Debug.Log("Start Level");
         _spawner.Active = true;
     }
 }

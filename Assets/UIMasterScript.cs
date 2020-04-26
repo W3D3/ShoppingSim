@@ -6,12 +6,10 @@ using UnityEngine.UI;
 
 public class UIMasterScript : MonoBehaviour
 {
-
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI timeText;
     public AudioSource audioData;
 
-    private float _timePassed = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,21 +20,20 @@ public class UIMasterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _timePassed += Time.deltaTime;
-        moneyText.SetText("€ " + GameManager.currentMoney/100 + "." + GameManager.currentMoney%100);
-        timeText.SetText(GameManager.IngameSecondsToHourFormat((int)_timePassed));
-
+        moneyText.SetText("€ " + GameManager.currentMoney / 100 + "." + GameManager.currentMoney % 100);
+        timeText.SetText(GameManager.IngameSecondsToHourFormat((int) GameManager.currentLevel.TimePassed));
     }
 
     public void PressStartButton(Object startButton)
     {
         //Toggle Button
-        ((GameObject)startButton).SetActive(false);
+        ((GameObject) startButton).SetActive(false);
 
         //Start Music
         audioData = GetComponent<AudioSource>();
         audioData.Play(0);
 
         //Start Game
+        GameManager.currentLevel.StartLevel();
     }
 }
