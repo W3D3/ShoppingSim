@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIMasterScript : MonoBehaviour
 {
 
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI timeText;
+    public AudioSource audioData;
 
     private float _timePassed = 0f;
     // Start is called before the first frame update
@@ -24,5 +26,17 @@ public class UIMasterScript : MonoBehaviour
         moneyText.SetText("€ " + GameManager.currentMoney/100 + "." + GameManager.currentMoney%100);
         timeText.SetText(GameManager.IngameSecondsToHourFormat((int)_timePassed));
 
+    }
+
+    public void PressStartButton(Object startButton)
+    {
+        //Toggle Button
+        ((GameObject)startButton).SetActive(false);
+
+        //Start Music
+        audioData = GetComponent<AudioSource>();
+        audioData.Play(0);
+
+        //Start Game
     }
 }

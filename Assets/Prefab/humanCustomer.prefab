@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f730d4b2df06994aa63733bf159b69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoppingList: {fileID: 11400000, guid: 023b783b285a1a749998a80f50160ad4, type: 2}
+  shoppingList: {fileID: 11400000, guid: d441f569bcb54f54c9ccbc1c3d4a75a2, type: 2}
   checkout: {fileID: 0}
   exit: {fileID: 0}
   audioData: {fileID: -98210413227146318}
