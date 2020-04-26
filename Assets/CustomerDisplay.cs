@@ -17,7 +17,7 @@ public class CustomerDisplay : MonoBehaviour
 
     void Update()
     {
-        RefreshUI();
+        //RefreshUI();
     }
 
     public void RefreshUI()

@@ -24,12 +24,14 @@ public class SelectionMenuScript : MonoBehaviour
                     if (GameManager.selectedItem != null)
                     {
                         Debug.Log("Placing item on " + hit.transform.name); // ensure you picked right object
-                        shelf.Shelve(GameManager.selectedItem);
+                        int paid = shelf.Shelve(GameManager.selectedItem);
+                        GameManager.currentMoney -= paid;
                     }
                     else
                     {
                         Debug.Log("Removing item from " + hit.transform.name); // ensure you picked right object
-                        shelf.UnShelve();
+                        var unShelved = shelf.UnShelve();
+                        GameManager.currentMoney += unShelved.price / 2;
                     }
                     
                 }

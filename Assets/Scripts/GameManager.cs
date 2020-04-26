@@ -11,7 +11,7 @@ public class GameManager
 	public static int closingHour = 21;
 
 	public static Item selectedItem = null;
-    public static int currentMoney;
+    public static int currentMoney = 2000;
 
     public static LevelManager currentLevel;
 
@@ -62,6 +62,7 @@ public class GameManager
     public static void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        currentMoney = 2000;
         Time.timeScale = 1;
     }
 }
