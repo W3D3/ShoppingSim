@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7000692905224892112}
   - component: {fileID: 2524104170425234438}
   m_Layer: 0
-  m_Name: ToiletpaperPrefab
+  m_Name: ToiletPaperPrefab
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

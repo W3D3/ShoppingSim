@@ -21,7 +21,7 @@ public class UIMasterScript : MonoBehaviour
     void Update()
     {
         _timePassed += Time.deltaTime;
-        moneyText.SetText("€ " + GameManager.currentMoney);
+        moneyText.SetText("€ " + GameManager.currentMoney/100 + "." + GameManager.currentMoney%100);
         timeText.SetText(GameManager.IngameSecondsToHourFormat((int)_timePassed));
 
     }
