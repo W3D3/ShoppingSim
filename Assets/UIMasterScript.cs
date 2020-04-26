@@ -17,6 +17,7 @@ public class UIMasterScript : MonoBehaviour
     public CustomerList level3;
 
     private GameObject startButton;
+    private GameObject loadButton;
 
     // Start is called before the first frame update
     void Start()
@@ -34,14 +35,24 @@ public class UIMasterScript : MonoBehaviour
 
     public void PressStartButton(Object startButton)
     {
-
-        GameManager.uiScript = this;
-        //Toggle Button
-        ((GameObject) startButton).SetActive(false);
+        
+        dropdown.gameObject.SetActive(false);
+        //Toggle Buttons
+        loadButton.SetActive(false);
+        
         this.startButton = ((GameObject)startButton);
+        this.startButton.SetActive(false);
+        
         //Start Music
         audioData = GetComponent<AudioSource>();
         audioData.Play(0);
+        //Start Game
+        GameManager.currentLevel.StartLevel();
+    }
+
+    public void LoadLevel(Object loadButton)
+    {
+        GameManager.uiScript = this;
 
         Debug.Log(dropdown.value);
 
@@ -51,15 +62,13 @@ public class UIMasterScript : MonoBehaviour
             case 1: GameManager.currentLevel.customerList = level2; break;
             case 2: GameManager.currentLevel.customerList = level3; break;
         }
-
-        dropdown.gameObject.SetActive(false);
-        //Start Game
-        GameManager.currentLevel.StartLevel();
+        GameManager.currentLevel.LoadLevel();
     }
 
     public void NewStart()
     {
         startButton.SetActive(true);
+        loadButton.SetActive(true);
         dropdown.gameObject.SetActive(true);
 
     }

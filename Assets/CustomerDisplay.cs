@@ -10,9 +10,11 @@ public class CustomerDisplay : MonoBehaviour
     public CustomerList cList;
 
 
+    private List<GameObject> spawnedObjects;
+    
     void Start()
     {
-        RefreshUI();
+        spawnedObjects = new List<GameObject>();
     }
 
     void Update()
@@ -22,6 +24,10 @@ public class CustomerDisplay : MonoBehaviour
 
     public void RefreshUI()
     {
+        foreach (var obj in spawnedObjects)
+        {
+            Destroy(obj);
+        }
         //int counter = 0;
         List<ShoppingList> sortedList = cList.shoppingListList.OrderBy(o => o.spawnDelay).ToList();
 
@@ -35,6 +41,7 @@ public class CustomerDisplay : MonoBehaviour
             slobject.SetActive(true);
             slobject.transform.SetParent(shoppingListTemplate.transform.parent);
             slobject.transform.localPosition = new Vector2(0, 310 + i * -260);
+            spawnedObjects.Add(slobject);
         }
     }
 }

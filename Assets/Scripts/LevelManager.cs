@@ -21,7 +21,11 @@ public class LevelManager : MonoBehaviour
         GameManager.currentLevel = this;
         _spawner = GetComponent<SpawnScript>();
         if (_spawner == null) Debug.LogError("No spawner on LevelManager!");
+        if (_spawner == null) Debug.LogError("No spawner on LevelManager!");
+    }
 
+    public void LoadLevel()
+    {
         Debug.Log("Loaded level with " + customerList.shoppingListList.Count + " customers.");
         display.cList = customerList;
         display.RefreshUI();
