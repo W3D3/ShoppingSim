@@ -23,7 +23,7 @@ public class ListDisplay : MonoBehaviour
 			itemObject.GetComponent<ItemDisplay>().SetValues(item);
 			itemObject.SetActive(true);
 			itemObject.transform.SetParent(itemTemplate.transform.parent);
-			itemObject.transform.localPosition = new Vector2(20,-30 -counter*40);
+			itemObject.transform.localPosition = new Vector2(110,-30 -counter*40);
 			counter++;
 
 		}); 

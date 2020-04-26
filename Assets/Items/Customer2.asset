@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Customer2
   m_EditorClassIdentifier: 
   spawnDelay: 5
-  debugField: Testimann
   itemList:
   - {fileID: 11400000, guid: 93033070bae803a42b1fc0f2b277f33d, type: 2}
   - {fileID: 11400000, guid: 93033070bae803a42b1fc0f2b277f33d, type: 2}

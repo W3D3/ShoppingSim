@@ -23,7 +23,7 @@ public class CustomerDisplay : MonoBehaviour
             slobject.GetComponent<ListDisplay>().SetValues(sortedList[i]);
             slobject.SetActive(true);
             slobject.transform.SetParent(shoppingListTemplate.transform.parent);
-            slobject.transform.localPosition = new Vector2(0, 340 + i * -210);
+            slobject.transform.localPosition = new Vector2(0, 310 + i * -260);
         }
 
 
