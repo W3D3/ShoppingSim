@@ -52,6 +52,7 @@ public class UIMasterScript : MonoBehaviour
 
     public void LoadLevel(Object loadButton)
     {
+        this.loadButton = (GameObject) loadButton;
         GameManager.uiScript = this;
 
         Debug.Log(dropdown.value);
